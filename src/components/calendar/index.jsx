@@ -22,7 +22,7 @@ export const Calendar = () => {
   return (
     <div className='calendar'>
       <CalendarHeader />
-      <CalendarGrid />
+      <CalendarGrid startDay={startDay} />
     </div>
   )
 }
