@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 import CalendarHeader from './calendar-header';
 import CalendarGrid from './calendar-grid';
@@ -6,23 +6,27 @@ import './index.css';
 
 export const Calendar = () => {
 
-  moment.updateLocale('en', { week: { dow: 1 } })
-  const startDay = moment().startOf('month').startOf('week')
-  const endDay = moment().endOf('month').endOf('week')
-  const arrayOfDates = [];
-  let day = startDay.clone();
-
-  while (!day.isAfter(endDay)) {
-    arrayOfDates.push(day.clone());
-    day.add(1, 'day')
+  const [currentDate, setCurrentDate] = useState(moment());
+  moment.updateLocale('ru', { week: { dow: 1 } })
+  const startDay = currentDate.clone().startOf('month').startOf('week')
+  const prevMonthHandler = () => {
+    setCurrentDate(prev => prev.clone().subtract(1, 'month'));
+  }
+  const nextMonthHandler = () => {
+    setCurrentDate(prev => prev.clone().add(1, 'month'));
   }
 
-  console.log(arrayOfDates)
-
   return (
-    <div className='calendar'>
-      <CalendarHeader />
-      <CalendarGrid startDay={startDay} />
+    <div className="calendar">
+      <CalendarHeader
+        currentDate={currentDate}
+        prevMonthHandler={prevMonthHandler}
+        nextMonthHandler={nextMonthHandler}
+      />
+      <CalendarGrid
+        startDay={startDay}
+        currentDate={currentDate}
+      />
     </div>
   )
 }

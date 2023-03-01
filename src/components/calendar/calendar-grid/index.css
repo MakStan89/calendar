@@ -1,25 +1,74 @@
 .calendar-grid {
-  width: 800px;
+  border: 2px solid #808080;
+  border-radius: 5px;
+}
+
+.grid-header {
+  background-color: #808080;
+  height: 50px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  align-items: center;
+}
+
+.grid-header__item {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.grid-wrapper {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  background-color: #c0c0c0;
+  background-color: #808080;
   gap: 2px;
 }
 
 .grid-cell {
   min-height: 100px;
-  background-color: #404040;
+  background-color: #303030;
   display: flex;
   flex-direction: column;
   align-items: end;
+  overflow: hidden;
 }
 
 .grid-cell__number {
-  color: #ffffff;
+  color: #606060;
   font-size: 16px;
-  line-height: 33px;
+  line-height: 40px;
   text-align: center;
-  width: 33px;
-  height: 33px;
+  width: 35px;
+  height: 35xpx;
+}
+
+.grid-cell-events {
+  height: 65px;
+  align-self: stretch;
+  white-space: nowrap;
+}
+
+.daily-list-item {
+  height: 20px;
+  padding-left: 3px;
+}
+
+.item-button {
+  text-overflow: ellipsis;
+  cursor: pointer;
+  width: 100%;
+  background-color: #9933ff;
+  color: #4c0099;
+  border: 1px solid #ffffff;
+}
+
+.white-button {
+  background-color: #ffffff;
+}
+
+.current-month {
+  color: #ffffff;
 }
