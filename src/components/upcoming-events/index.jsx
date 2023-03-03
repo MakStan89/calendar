@@ -42,9 +42,8 @@ export const UpcomingEvents = () => {
                   <p key={index}>{text}</p>)}
             </div>
             <div className="events-item__organizator">{event.organizator}</div>
-            <div className="events-item__organizator">{Date.parse(event.date)}</div>
-            <div className="events-item-registration registration ">
-              <button className="registration-button">Запись</button>
+            <div className="events-item-registration">
+              <button className="events-item-registration__button button">Запись</button>
             </div>
           </div>
         ))}

@@ -35,18 +35,6 @@
   background-color: #ffffff;
 }
 
-.events-item__date {
-}
-
-.events-item__duration {
-}
-
-.events-item__adress {
-}
-
-.events-item__city {
-}
-
 .events-item__title {
   font-size: 20px;
   font-weight: bold;
@@ -77,12 +65,15 @@
   align-items: center;
 }
 
-.registration-button {
+.events-item-registration__button {
   width: 70px;
   height: 45px;
+  font-weight: bold;
+}
+
+.button {
   border-radius: 10px;
   font-size: 16px;
-  font-weight: bold;
   color: #ffffff;
   background-color: #ff8000;
 }

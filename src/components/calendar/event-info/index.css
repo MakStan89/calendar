@@ -1,0 +1,83 @@
+.info {
+  position: absolute;
+  z-index: 100;
+  left: 37.5%;
+  top: 35%;
+  width: 200px;
+  background-color: #313131;
+  border-radius: 15px;
+  box-shadow: -10px 5px 5px #202020;
+  overflow: visible;
+}
+
+.info-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  font-size: 10px;
+  color: #808080;
+}
+
+.info-item__title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.info-item-date {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.info-item-date__icon {
+  background: url("../../../icon/calendar.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+.info-item-date__info {
+  margin-left: 10px;
+}
+
+.info-item__adress {
+  margin-bottom: 8px;
+}
+
+.info-item__button {
+  width: 120px;
+  height: 32px;
+  line-height: 18px;
+  margin-bottom: 8px;
+}
+
+.info-item__text {
+  margin-bottom: 8px;
+  color: #e0e0e0;
+}
+
+.info-item__organizator {
+  display: flex;
+  align-items: center;
+}
+
+.organizator-icon {
+  background: url("../../../icon/organizator.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+.organizator-info {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.organizator-info__name {
+  color: #ffffff;
+  font-weight: bold;
+}
