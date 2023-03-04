@@ -2,7 +2,7 @@ import React from 'react';
 import events from '../../events';
 import './index.css';
 
-export const UpcomingEvents = () => {
+export const UpcomingEvents = ({ openModal }) => {
 
   let regexLink = /<a href=".*>(.{0,})<\/a>/g;
   let regexImportant = /(.{0,})<b>(.{0,})<b>(.{0,})/g;
@@ -43,7 +43,7 @@ export const UpcomingEvents = () => {
             </div>
             <div className="events-item__organizator">{event.organizator}</div>
             <div className="events-item-registration">
-              <button className="events-item-registration__button button">Запись</button>
+              <button className="events-item-registration__button button" onClick={() => openModal()}>Запись</button>
             </div>
           </div>
         ))}

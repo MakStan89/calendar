@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 
-export const EventInfo = ({ event }) => {
+export const EventInfo = ({ event, openModal }) => {
 
   let regexLink = /<a href=".*>(.{0,})<\/a>/g;
   let regexImportant = /(.{0,})<b>(.{0,})<b>(.{0,})/g;
@@ -15,7 +15,7 @@ export const EventInfo = ({ event }) => {
           <span className="info-item-date__info">{event.date} {event.duration} час. </span>
         </div>
         <span className="info-item__adress">{event.adress || event.city || ''}</span>
-        <button className="info-item__button button">Запись</button>
+        <button className="info-item__button button" onClick={() => openModal()} >Запись</button>
         <div className="info-item__text">
           {event.text
             .replace(regexImportant, '$1 $2 $3')

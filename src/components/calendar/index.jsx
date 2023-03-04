@@ -5,12 +5,10 @@ import CalendarGrid from './calendar-grid';
 import EventInfo from './event-info';
 import './index.css';
 
-export const Calendar = () => {
-
-  let [currentDate, setCurrentDate] = useState(moment());
-  let [eventInfo, setEventInfo] = useState(null);
-  let [showInfo, setShowInfo] = useState(false);
-  moment.updateLocale('ru', { week: { dow: 1 } })
+export const Calendar = ({ openModal, showInfo, setShowInfo }) => {
+  moment.updateLocale('en', { week: { dow: 1 } })
+  const [currentDate, setCurrentDate] = useState(moment());
+  const [eventInfo, setEventInfo] = useState(null);
   const startDay = currentDate.clone().startOf('month').startOf('week');
   const prevMonthHandler = () => {
     setCurrentDate(prev => prev.clone().subtract(1, 'month'));
@@ -28,9 +26,6 @@ export const Calendar = () => {
       setEventInfo(null);
     }, 4000);
   };
-
-  console.log(eventInfo);
-  console.log(showInfo);
 
   return (
     <div className="calendar">
@@ -50,6 +45,7 @@ export const Calendar = () => {
         (
           <EventInfo
             event={eventInfo}
+            openModal={openModal}
           />
         )
       }

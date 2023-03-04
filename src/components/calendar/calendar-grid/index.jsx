@@ -6,7 +6,7 @@ export const CalendarGrid = ({ startDay, currentDate, eventViewHandler, closeInf
 
   const daysCount = 42;
   const dayOfWeek = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
-  const day = startDay.clone();
+  const day = startDay.clone().subtract(1, 'day');
   const daysArray = [...Array(daysCount)].map(() => day.add(1, 'day').clone());
   const isCurrentMonth = (date) => currentDate.isSame(date, 'month');
   const currentMonth = (date) => isCurrentMonth(date) ? 'grid-cell__number current-month' : 'grid-cell__number';
@@ -20,7 +20,6 @@ export const CalendarGrid = ({ startDay, currentDate, eventViewHandler, closeInf
       return "item-button"
     }
   };
-
 
   return (
     <div className="calendar-grid grid">
